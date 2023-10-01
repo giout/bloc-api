@@ -46,11 +46,11 @@ class MongoService<D extends Document> {
     }    
 
     // handles try/catch, taking the try or success code block as parameter
-    private handleHttp = async (req: Request, res: Response, operation: () => Promise<void>): Promise<void> =>{
+    protected handleHttp = async (req: Request, res: Response, operation: () => Promise<void>): Promise<void> =>{
         try{
             await operation()
         } catch(err) {
-            res.status(500).end()
+            res.status(500).json({msg: err})
         }
     }
 }
