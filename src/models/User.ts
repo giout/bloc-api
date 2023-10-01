@@ -1,6 +1,7 @@
 import { Schema, model } from 'mongoose'
+import UserDocument from '../types/users'
 
-const User = model('User', new Schema({
+const User = model<UserDocument>('User', new Schema({
     username: {
         type: String,
         required: true

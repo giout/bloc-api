@@ -2,8 +2,8 @@ import 'dotenv/config'
 import mongoose from 'mongoose'
 import express from 'express'
 import cors from 'cors'
-import { connection } from './config/database.js'
-import router from './routes/index.js'
+import { connection } from './config/database'
+import router from './routes'
 
 const app = express() // aplicacion
 const port = process.env.PORT
@@ -19,6 +19,6 @@ connection()
         console.log('Connected.')
     })
 
-app.listen(port, (req, res) => {
-    console.log(`http://localhost:${port}`)
+app.listen(port, () => {
+    console.log('Listening on port', port)
 })

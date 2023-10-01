@@ -1,11 +1,10 @@
 import { Schema, model } from 'mongoose'
+import FolderDocument from '../types/folders'
 
-const Note = model('Note', new Schema({
+const Folder = model<FolderDocument>('Folder', new Schema({
     title: {
-        type: String
-    },
-    content: {
-        type: String
+        type: String,
+        required: true
     },
     userId: {
         type: Schema.Types.ObjectId,
@@ -18,4 +17,4 @@ const Note = model('Note', new Schema({
     }
 }, { versionKey: false }))
 
-export default Note
+export default Folder

@@ -1,9 +1,9 @@
 import { Router } from 'express'
-import userRouter from './users.js'
-import folderRouter from './folders.js'
-import noteRouter from './notes.js'
+import userRouter from './users'
+import folderRouter from './folders'
+import noteRouter from './notes'
 
-const router = new Router()
+const router = Router()
 
 router.use('/users', userRouter)
 router.use('/folders', folderRouter)
