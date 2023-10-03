@@ -10,10 +10,6 @@ const Folder = model<FolderDocument>('Folder', new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
-    },
-    folderId: {
-        type: Schema.Types.ObjectId,
-        ref: 'Folder'
     }
 }, { versionKey: false }))
 

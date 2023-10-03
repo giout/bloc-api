@@ -8,14 +8,10 @@ const Note = model<NoteDocument>('Note', new Schema({
     content: {
         type: String
     },
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
     folderId: {
         type: Schema.Types.ObjectId,
-        ref: 'Folder'
+        ref: 'Folder',
+        required: true
     }
 }, { versionKey: false }))
 
