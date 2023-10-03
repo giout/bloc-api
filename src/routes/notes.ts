@@ -14,4 +14,7 @@ router.route('/:id')
     .put(controller.updateEntry)
     .delete(controller.deleteEntry)
 
+router.route('/folder/:id')
+    .get(controller.getAllByFolder)
+
 export default router
