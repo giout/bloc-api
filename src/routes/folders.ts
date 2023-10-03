@@ -6,7 +6,7 @@ const router = Router()
 const controller = new FolderController(Folder)
 
 router.route('/')
-    .get(controller.getAllEntries) // eliminar despues
+    .get(controller.getAllEntries)
     .post(controller.createEntry)
 
 router.route('/:id')
