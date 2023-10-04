@@ -1,16 +1,18 @@
 import { Router } from 'express'
-import FolderController from '../controllers/FolderController'
-import Folder from '../models/Folder'
+import controller from '../controllers/notes.controller'
 
 const router = Router()
-const controller = new FolderController(Folder)
 
 router.route('/')
-    .get(controller.getAllEntries)
+    .get(controller.getAllEntries) // eliminar despues
     .post(controller.createEntry)
 
 router.route('/:id')
+    .get(controller.getEntryById)
     .put(controller.updateEntry)
     .delete(controller.deleteEntry)
+
+router.route('/folder/:id')
+    .get(controller.getAllByFolder)
 
 export default router

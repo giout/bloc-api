@@ -1,7 +1,7 @@
-import MongoService from "./MongoService";
-import NoteDocument from "../types/notes";
-import { Request, Response } from "express";
-import Note from "../models/Note";
+import MongoService from "./MongoService"
+import NoteDocument from "../types/notes"
+import { Request, Response } from "express"
+import Note from "../models/Note"
 
 class NoteController extends MongoService<NoteDocument> {
     public getAllByFolder = async (req: Request, res: Response): Promise<void> => {
@@ -12,4 +12,6 @@ class NoteController extends MongoService<NoteDocument> {
     }
 }
 
-export default NoteController
+const controller = new NoteController(Note)
+
+export default controller

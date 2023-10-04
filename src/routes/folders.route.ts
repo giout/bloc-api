@@ -1,12 +1,10 @@
 import { Router } from 'express'
-import UserController from '../controllers/UserController'
-import User from '../models/User'
+import controller from '../controllers/folders.controller'
 
 const router = Router()
-const controller = new UserController(User)
 
 router.route('/')
-    .get(controller.getAllEntries) // eliminar despues
+    .get(controller.getAllEntries)
     .post(controller.createEntry)
 
 router.route('/:id')
