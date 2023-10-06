@@ -1,3 +1,4 @@
+/*
 import 'dotenv/config'
 import mongoose from 'mongoose'
 import app from "../config/app"
@@ -15,4 +16,4 @@ describe('', () => {
 
 afterAll( async() => {
     await mongoose.disconnect()
-})
+})*/

@@ -4,11 +4,13 @@ import controller from '../controllers/folders.controller'
 const router = Router()
 
 router.route('/')
-    .get(controller.getAllEntries)
     .post(controller.createEntry)
 
 router.route('/:id')
     .put(controller.updateEntry)
     .delete(controller.deleteEntry)
+
+router.route('/user/:id')
+    .get(controller.getAllFoldersByUser)
 
 export default router
