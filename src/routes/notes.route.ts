@@ -4,7 +4,6 @@ import controller from '../controllers/notes.controller'
 const router = Router()
 
 router.route('/')
-    .get(controller.getAllEntries) // eliminar despues
     .post(controller.createEntry)
 
 router.route('/:id')
