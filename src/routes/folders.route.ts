@@ -3,6 +3,7 @@ import controller from '../controllers/folders.controller'
 
 const router = Router()
 
+// rutas protegidas
 router.route('/')
     .post(controller.createEntry)
 

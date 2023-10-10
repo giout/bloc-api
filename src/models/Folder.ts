@@ -8,7 +8,7 @@ const Folder = model<FolderDocument>('Folder', new Schema({
     },
     userId: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'AuthUser',
         required: true
     }
 }, { versionKey: false }))

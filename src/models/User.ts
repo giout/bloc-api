@@ -1,20 +1,14 @@
-import { Schema, model } from 'mongoose'
-import UserDocument from '../types/users'
+import { Schema, model } from "mongoose"
+import { UserDocument } from "../types/auth"
 
 const User = model<UserDocument>('User', new Schema({
-    username: {
-        type: String,
-        required: true
-    },
     firstName: {
-        type: String,
-        required: true
-    },
+        type: String
+    },  
     lastName: {
-        type: String,
-        required: true
+        type: String
     },
-    password: {
+    username: {
         type: String,
         required: true
     },
@@ -22,6 +16,10 @@ const User = model<UserDocument>('User', new Schema({
         type: String,
         required: true,
         unique: true
+    },
+    password: {
+        type: String,
+        required: true
     }
 }, { versionKey: false }))
 

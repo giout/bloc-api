@@ -1,12 +1,12 @@
 import { Router } from 'express'
 import controller from '../controllers/users.controller'
-import CustomError from '../error/CustomError'
+import { authentication } from '../middlewares/auth'
+authentication
 
 const router = Router()
 
 router.route('/')
-    .get(controller.getAllEntries) // eliminar despues
-    .post(controller.createEntry)
+    .get(authentication, controller.getUser)
 
 router.route('/:id')
     .put(controller.updateEntry)

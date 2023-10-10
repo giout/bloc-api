@@ -4,7 +4,7 @@ import Folder from "../models/Folder"
 import { Request, Response, NextFunction } from "express"
 
 class FolderController extends MongoService<FolderDocument> {
-    getAllFoldersByUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    getAllByUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
         try {
             const folders = await Folder.find({ userId: req.params.id })
             res.status(200).json(folders)

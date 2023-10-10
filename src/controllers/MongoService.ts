@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express'
 import { Document, Model } from 'mongoose'
 
 class MongoService<D extends Document> {
-    model: Model<D> // mongoose model
+    model: Model<D> 
 
     constructor(model: Model<D>) {
         this.model = model
