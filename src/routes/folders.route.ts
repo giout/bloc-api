@@ -11,6 +11,6 @@ router.route('/:id')
     .delete(controller.deleteEntry)
 
 router.route('/user/:id')
-    .get(controller.getAllFoldersByUser)
+    .get(controller.getAllByUser)
 
 export default router
