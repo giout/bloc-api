@@ -8,7 +8,6 @@ router.route('/')
     .post(controller.createEntry)
 
 router.route('/:id')
-    .get(controller.getEntryById)
     .put(controller.updateEntry)
     .delete(controller.deleteEntry)
 

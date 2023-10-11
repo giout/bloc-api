@@ -11,7 +11,7 @@ router.route('/:id')
     .put(controller.updateEntry)
     .delete(controller.deleteEntry)
 
-router.route('/user/:id')
+router.route('/user')
     .get(controller.getAllByUser)
 
 export default router

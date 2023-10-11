@@ -2,6 +2,12 @@ import 'dotenv/config'
 import { connect } from 'mongoose'
 
 export async function connection() {
-    const uri = process.env.DB_URI
-    await connect(<string> uri)
+    try {
+        const uri = process.env.DB_URI
+        await connect(<string> uri)
+    } catch (err) {
+        console.log(err)
+        process.exit(1)
+    }
+
 }
