@@ -6,4 +6,5 @@ const port = process.env.PORT
 
 connection().then(() => console.log('Connected.')) // conectando a base de datos
 
-app.listen(port, () => console.log('Listening on port', port))
+export const server = app.listen(port, () => console.log('Listening on port', port))
+
