@@ -3,7 +3,6 @@ import userRouter from './users.route'
 import folderRouter from './folders.route'
 import noteRouter from './notes.route'
 import authRouter from './auth.route'
-import { authentication } from '../middlewares/auth'
 
 const router = Router()
 
@@ -11,7 +10,6 @@ const router = Router()
 router.use('/auth', authRouter)
 
 // rutas protegidas
-router.use(authentication)
 router.use('/users', userRouter)
 router.use('/folders', folderRouter)
 router.use('/notes', noteRouter)

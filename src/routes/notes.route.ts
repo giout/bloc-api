@@ -1,9 +1,12 @@
 import { Router } from 'express'
 import controller from '../controllers/notes.controller'
+import { authentication } from '../middlewares/auth'
 
 const router = Router()
 
-// rutas protegidas
+// ruta protegida
+router.use(authentication)
+
 router.route('/')
     .post(controller.createEntry)
 
