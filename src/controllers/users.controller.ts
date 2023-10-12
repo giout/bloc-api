@@ -1,9 +1,9 @@
-import MongoService from "./MongoService"
+import MongoController from "./MongoController"
 import { AuthRequest, UserDocument } from "../types/auth"
 import User from "../models/User"
 import { Request, Response, NextFunction } from "express"
 
-class UserController extends MongoService<UserDocument> {
+class UserController extends MongoController<UserDocument> {
     public getUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
         try {
             const user = (req as AuthRequest).user

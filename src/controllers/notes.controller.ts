@@ -1,9 +1,9 @@
-import MongoService from "./MongoService"
+import MongoController from "./MongoController"
 import NoteDocument from "../types/notes"
 import { Request, Response, NextFunction } from "express"
 import Note from "../models/Note"
 
-class NoteController extends MongoService<NoteDocument> {
+class NoteController extends MongoController<NoteDocument> {
     public getAllByFolder = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
         try {
             const notes = await Note.find({ folderId: req.params.id })

@@ -1,12 +1,15 @@
-import MongoService from "./MongoService"
+import MongoService from "./MongoController"
 import FolderDocument from "../types/folders"
 import Folder from "../models/Folder"
 import { Request, Response, NextFunction } from "express"
+import { AuthRequest } from "../types/auth"
+import { JwtPayload } from "jsonwebtoken"
 
 class FolderController extends MongoService<FolderDocument> {
     getAllByUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
         try {
-            const folders = await Folder.find({ userId: req.params.id })
+            const user = <JwtPayload> (req as AuthRequest).user
+            const folders = await Folder.find({ userId: user.id })
             res.status(200).json(folders)
         } catch (err) {
             next(err)
