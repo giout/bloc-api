@@ -48,8 +48,8 @@ class MongoController {
             try {
                 const { params, body } = req;
                 yield this.verifyExistence(params.id);
-                yield this.model.findByIdAndUpdate(params.id, body);
-                res.status(200).end();
+                const entry = yield this.model.findByIdAndUpdate(params.id, body);
+                res.status(200).json(entry);
             }
             catch (err) {
                 next(err);

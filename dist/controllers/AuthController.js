@@ -32,7 +32,7 @@ class AuthController {
                         // encriptando clave
                         req.body.password = (0, bcrypt_1.encrypt)(password, 10);
                         const entry = yield this.userModel.create(req.body);
-                        return res.status(201).end();
+                        return res.status(201).json(entry);
                     }
                 }
                 throw new CustomError_1.default('All fields must be filled', 400);

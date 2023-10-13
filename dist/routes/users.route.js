@@ -10,8 +10,7 @@ const router = (0, express_1.Router)();
 // ruta protegida
 router.use(auth_1.authentication);
 router.route('/')
-    .get(users_controller_1.default.getUser);
-router.route('/:id')
-    .put(users_controller_1.default.updateEntry)
-    .delete(users_controller_1.default.deleteEntry);
+    .get(users_controller_1.default.getUser)
+    .put(users_controller_1.default.updateUser)
+    .delete(users_controller_1.default.deleteUser);
 exports.default = router;

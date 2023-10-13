@@ -28,6 +28,29 @@ class UserController extends MongoController_1.default {
                 next(err);
             }
         });
+        this.updateUser = (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const { body } = req;
+                const payload = req.user;
+                yield this.verifyExistence(payload.id);
+                const entry = yield this.model.findByIdAndUpdate(payload.id, body);
+                res.status(200).json(entry);
+            }
+            catch (err) {
+                next(err);
+            }
+        });
+        this.deleteUser = (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const payload = req.user;
+                yield this.verifyExistence(payload.id);
+                yield this.model.findByIdAndDelete(payload.id);
+                res.status(200).end();
+            }
+            catch (err) {
+                next(err);
+            }
+        });
     }
 }
 const controller = new UserController(User_1.default);
