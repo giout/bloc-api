@@ -34,7 +34,8 @@ class UserController extends MongoController_1.default {
                 const payload = req.user;
                 yield this.verifyExistence(payload.id);
                 const entry = yield this.model.findByIdAndUpdate(payload.id, body);
-                res.status(200).json(entry);
+                const updatedEntry = yield this.model.findById(payload.id);
+                res.status(200).json(updatedEntry);
             }
             catch (err) {
                 next(err);

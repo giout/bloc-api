@@ -21,7 +21,8 @@ class UserController extends MongoController<UserDocument> {
             const payload = <JwtPayload> (req as AuthRequest).user
             await this.verifyExistence(payload.id)
             const entry = await this.model.findByIdAndUpdate(payload.id, body)
-            res.status(200).json(entry)
+            const updatedEntry = await this.model.findById(payload.id)
+            res.status(200).json(updatedEntry)
         } catch (err) {
             next(err)
         }
