@@ -72,7 +72,7 @@ Authorization -> Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjhkOWN
 
 <br>
 <h2>Actualizar usuario</h2>
-<p>PUT /users/6528d9cbfe3259323f7f6044</p>
+<p>PUT /users</p>
 <br>
 <p><strong>Request body</strong></p>
 
@@ -96,7 +96,7 @@ Authorization -> Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjhkOWN
 
 <br>
 <h2>Eliminar usuario</h2>
-<p>DELETE /users/6528d9cbfe3259323f7f6044</p>
+<p>DELETE /users</p>
 <br>
 <h2>Obtener carpetas por usuario</h2>
 <p>GET /folders/user</p>
