@@ -42,8 +42,8 @@ class MongoController<D extends Document> {
         try {
             const { params, body } = req
             await this.verifyExistence(params.id)
-            await this.model.findByIdAndUpdate(params.id, body)
-            res.status(200).end()
+            const entry = await this.model.findByIdAndUpdate(params.id, body)
+            res.status(200).json(entry)
         } catch (err) {
             next(err)
         }
