@@ -1,11 +1,10 @@
 {
-  "name": "server",
+  "name": "bloc-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "API REST para una aplicacion web de notas.",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon ./src/index.ts",
-    "test": "jest --verbose --silent --detectOpenHandles",
     "build": "tsc",
     "start": "node ./dist/index.js"
   },
