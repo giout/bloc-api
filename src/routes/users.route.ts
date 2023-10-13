@@ -9,9 +9,7 @@ router.use(authentication)
 
 router.route('/')
     .get(controller.getUser)
-
-router.route('/:id')
-    .put(controller.updateEntry)
-    .delete(controller.deleteEntry)
+    .put(controller.updateUser)
+    .delete(controller.deleteUser)
 
 export default router

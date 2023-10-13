@@ -15,6 +15,27 @@ class UserController extends MongoController<UserDocument> {
             next(err)
         }
     }
+    public updateUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+        try {
+            const { body } = req
+            const payload = <JwtPayload> (req as AuthRequest).user
+            await this.verifyExistence(payload.id)
+            const entry = await this.model.findByIdAndUpdate(payload.id, body)
+            res.status(200).json(entry)
+        } catch (err) {
+            next(err)
+        }
+    }
+    public deleteUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+        try {
+            const payload = <JwtPayload> (req as AuthRequest).user
+            await this.verifyExistence(payload.id)
+            await this.model.findByIdAndDelete(payload.id)
+            res.status(200).end()
+        } catch (err) {
+            next(err)
+        }
+    }
 }
 
 const controller = new UserController(User)
