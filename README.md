@@ -8,10 +8,9 @@
 
 ```json
 {
-  "_id": "6528d9cbfe3259323f7f6044",
   "username": "luigi",
   "email": "luigi@gmail.com",
-  "password": "$2b$10$iY4A.5iPRxzybrLmevjeJuhUab5L0tSg9O7Ab8sFHt64rr/4/R.5q"
+  "password": "1234"
 }
 ```
 <br>
@@ -21,7 +20,7 @@
 {
   "username": "luigi",
   "email": "luigi@gmail.com",
-  "password": "",
+  "password": "$2b$10$iY4A.5iPRxzybrLmevjeJuhUab5L0tSg9O7Ab8sFHt64rr/4/R.5q",
   "_id": "6528d9cbfe3259323f7f6044"
 }
 ```
@@ -80,6 +79,18 @@ Authorization -> Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjhkOWN
 ```json
 {
   "username": "luigi-og"
+}
+```
+
+<br>
+<p><strong>Response</strong></p>
+
+```json
+{
+  "_id": "6528d9cbfe3259323f7f6044",
+  "username": "luigi-og",
+  "email": "luigi@gmail.com",
+  "password": "$2b$10$iY4A.5iPRxzybrLmevjeJuhUab5L0tSg9O7Ab8sFHt64rr/4/R.5q"
 }
 ```
 
@@ -145,6 +156,16 @@ Authorization -> Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjhkOWN
 ```json
 {
     "title": "secreto"
+}
+```
+
+<br>
+
+```json
+{
+  "title": "secreto",
+  "userId": "6528d9cbfe3259323f7f6044",
+  "_id": "6528dc0bfe3259323f7f604b"
 }
 ```
 
@@ -218,6 +239,19 @@ Authorization -> Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjhkOWN
 ```
 
 <br>
+
+<p><strong>Response</strong></p>
+
+```json
+{
+  "title": "nota",
+  "content": "Este contenido es privado.",
+  "folderId": "6528dc0bfe3259323f7f604b",
+  "_id": "6528ded5fe3259323f7f6055"
+}
+```
+
+<br>
 <h2>Eliminar nota</h2>
-<p>DELETE /folders/:id</p>
+<p>DELETE /folders/6528ded5fe3259323f7f6055</p>
 <br>
