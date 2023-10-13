@@ -19,7 +19,9 @@ class UserController extends MongoController_1.default {
         super(...arguments);
         this.getUser = (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             try {
-                const user = req.user;
+                const payload = req.user;
+                yield this.verifyExistence(payload.id);
+                const user = yield User_1.default.findById(payload.id);
                 res.status(200).json(user);
             }
             catch (err) {

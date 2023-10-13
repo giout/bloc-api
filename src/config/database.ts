@@ -7,7 +7,6 @@ export async function connection() {
         await connect(<string> uri)
     } catch (err) {
         console.log(err)
-        process.exit(1)
     }
 
 }
