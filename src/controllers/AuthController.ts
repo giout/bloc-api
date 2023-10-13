@@ -27,7 +27,7 @@ export class AuthController {
                     // encriptando clave
                     req.body.password = encrypt(password, 10)
                     const entry = await this.userModel.create(req.body)
-                    return res.status(201).end()
+                    return res.status(201).json(entry)
                 }
             }
 
