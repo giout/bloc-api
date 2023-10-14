@@ -33,8 +33,8 @@
 
 ```json
 {
-    "username": "luigi",
-    "email": "luigi@gmail.com"
+    "email": "luigi@gmail.com",
+    "password": "1234"
 }
 ```
 
