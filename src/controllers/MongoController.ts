@@ -63,7 +63,7 @@ class MongoController<D extends Document> {
     public verifyExistence = async (id: string): Promise<void> => {
         const entry = await this.model.findById(id)
         if (!entry) {
-            throw new CustomError('Resource not found', 404)
+            throw new CustomError('Recurso no obtenido', 404)
         }
     }
 }

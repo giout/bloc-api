@@ -18,7 +18,7 @@ export const authentication = (req: Request, res: Response, next: NextFunction) 
             // Verificando que el token sea valido
             jwt.verify(token, signature, (err, decoded) => {
                 if (err) {
-                    throw new CustomError('Session is invalid', 401)
+                    throw new CustomError('Sesion invalida', 401)
                 }
                 // Asignando datos del token a objeto Request
                 (req as AuthRequest).user = <JwtPayload> decoded 
@@ -26,7 +26,7 @@ export const authentication = (req: Request, res: Response, next: NextFunction) 
 
             return next()
         } else {
-            throw new CustomError('Invalid Bearer token', 400)
+            throw new CustomError('Bearer token invalido', 400)
         }
 
     } catch (error) {
