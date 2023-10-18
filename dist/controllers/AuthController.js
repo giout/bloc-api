@@ -32,7 +32,7 @@ class AuthController {
                         const entry = yield this.userModel.create(req.body);
                         return res.status(201).json(entry);
                     }
-                    throw new CustomError_1.default('User already exists', 400);
+                    throw new CustomError_1.default('El usuario ya existe', 400);
                 }
                 throw new CustomError_1.default('Todos los campos deben llenarse', 400);
             }
