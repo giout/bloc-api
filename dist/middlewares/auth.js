@@ -17,7 +17,7 @@ const authentication = (req, res, next) => {
             // Verificando que el token sea valido
             jsonwebtoken_1.default.verify(token, signature, (err, decoded) => {
                 if (err) {
-                    throw new CustomError_1.default('Session is invalid', 401);
+                    throw new CustomError_1.default('Sesion invalida', 401);
                 }
                 // Asignando datos del token a objeto Request
                 req.user = decoded;
@@ -25,7 +25,7 @@ const authentication = (req, res, next) => {
             return next();
         }
         else {
-            throw new CustomError_1.default('Invalid Bearer token', 400);
+            throw new CustomError_1.default('Bearer token invalido', 400);
         }
     }
     catch (error) {

@@ -69,7 +69,7 @@ class MongoController {
         this.verifyExistence = (id) => __awaiter(this, void 0, void 0, function* () {
             const entry = yield this.model.findById(id);
             if (!entry) {
-                throw new CustomError_1.default('Resource not found', 404);
+                throw new CustomError_1.default('Recurso no obtenido', 404);
             }
         });
         this.model = model;

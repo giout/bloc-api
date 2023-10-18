@@ -30,7 +30,7 @@ export class AuthController {
                     return res.status(201).json(entry)        
                 }
 
-                throw new CustomError('User already exists', 400)
+                throw new CustomError('El usuario ya existe', 400)
             } 
                 
             throw new CustomError('Todos los campos deben llenarse', 400)
