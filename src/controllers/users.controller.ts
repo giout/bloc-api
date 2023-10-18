@@ -3,6 +3,7 @@ import { AuthRequest, UserDocument } from "../types/auth"
 import User from "../models/User"
 import { Request, Response, NextFunction } from "express"
 import { JwtPayload } from "jsonwebtoken"
+import { encrypt } from "../utils/bcrypt"
 
 class UserController extends MongoController<UserDocument> {
     public getUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
@@ -20,7 +21,11 @@ class UserController extends MongoController<UserDocument> {
             const { body } = req
             const payload = <JwtPayload> (req as AuthRequest).user
             await this.verifyExistence(payload.id)
-            const entry = await this.model.findByIdAndUpdate(payload.id, body)
+
+            // si la clave existe, es necesario encriptarla antes de que sea modificada
+            if (body.password) body.password = encrypt(body.password, 10) 
+
+            await this.model.findByIdAndUpdate(payload.id, body)
             const updatedEntry = await this.model.findById(payload.id)
             res.status(200).json(updatedEntry)
         } catch (err) {
