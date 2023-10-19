@@ -174,7 +174,7 @@ Authorization -> Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjhkOWN
 <p>DELETE /folders/6528dc0bfe3259323f7f604b</p>
 <br>
 <h2>Obtener notas por carpeta</h2>
-<p>GET /folders/6528dc0bfe3259323f7f604b</p>
+<p>GET /notes/folder/6528dc0bfe3259323f7f604b</p>
 <p><strong>Response</strong></p>
 
 ```json
@@ -228,7 +228,7 @@ Authorization -> Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjhkOWN
 
 <br>
 <h2>Actualizar nota</h2>
-<p>PUT /folders/6528ded5fe3259323f7f6055</p>
+<p>PUT /notes/6528ded5fe3259323f7f6055</p>
 <br>
 <p><strong>Request body</strong></p>
 
@@ -253,5 +253,5 @@ Authorization -> Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjhkOWN
 
 <br>
 <h2>Eliminar nota</h2>
-<p>DELETE /folders/6528ded5fe3259323f7f6055</p>
+<p>DELETE /notes/6528ded5fe3259323f7f6055</p>
 <br>
