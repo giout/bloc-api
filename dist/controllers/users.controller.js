@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const MongoController_1 = __importDefault(require("./MongoController"));
 const User_1 = __importDefault(require("../models/User"));
+const bcrypt_1 = require("../utils/bcrypt");
 class UserController extends MongoController_1.default {
     constructor() {
         super(...arguments);
@@ -33,7 +34,12 @@ class UserController extends MongoController_1.default {
                 const { body } = req;
                 const payload = req.user;
                 yield this.verifyExistence(payload.id);
-                const entry = yield this.model.findByIdAndUpdate(payload.id, body);
+                console.log(body);
+                // si la clave existe, es necesario encriptarla antes de que sea modificada
+                if (body.password)
+                    body.password = (0, bcrypt_1.encrypt)(body.password, 10);
+                console.log(body);
+                yield this.model.findByIdAndUpdate(payload.id, body);
                 const updatedEntry = yield this.model.findById(payload.id);
                 res.status(200).json(updatedEntry);
             }
