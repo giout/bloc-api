@@ -34,11 +34,9 @@ class UserController extends MongoController_1.default {
                 const { body } = req;
                 const payload = req.user;
                 yield this.verifyExistence(payload.id);
-                console.log(body);
                 // si la clave existe, es necesario encriptarla antes de que sea modificada
                 if (body.password)
                     body.password = (0, bcrypt_1.encrypt)(body.password, 10);
-                console.log(body);
                 yield this.model.findByIdAndUpdate(payload.id, body);
                 const updatedEntry = yield this.model.findById(payload.id);
                 res.status(200).json(updatedEntry);
