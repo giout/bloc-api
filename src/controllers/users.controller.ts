@@ -22,8 +22,12 @@ class UserController extends MongoController<UserDocument> {
             const payload = <JwtPayload> (req as AuthRequest).user
             await this.verifyExistence(payload.id)
 
+            console.log(body)
+
             // si la clave existe, es necesario encriptarla antes de que sea modificada
             if (body.password) body.password = encrypt(body.password, 10) 
+            
+            console.log(body)
 
             await this.model.findByIdAndUpdate(payload.id, body)
             const updatedEntry = await this.model.findById(payload.id)
