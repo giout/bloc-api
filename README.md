@@ -1,4 +1,9 @@
 <h1>API de bloc de notas</h1>
+<ul>
+<li>Giovanni Urdaneta - 28288477</li>
+<li>Juan Romero - 29955629</li>
+</ul>
+<br>
 <p>URL -> https://bloc-api-production.up.railway.app</p>
 <br>
 <h2>Registro</h2>
