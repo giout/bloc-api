@@ -9,7 +9,7 @@ class FolderController extends MongoController<FolderDocument> {
     getAllByUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
         try {
             const user = <JwtPayload> (req as AuthRequest).user
-            const folders = await Folder.find({ userId: user.id })
+            const folders = await this.model.find({ userId: user.id })
             res.status(200).json(folders)
         } catch (err) {
             next(err)
